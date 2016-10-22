@@ -1,0 +1,16 @@
+<datasource jta="false" jndi-name="java:jboss/datasources/tripDS" pool-name="tripDS" enabled="true" use-ccm="false">
+                    <connection-url>jdbc:postgresql://localhost:5432/trip</connection-url>
+                    <driver-class>org.postgresql.Driver</driver-class>
+                    <driver>postgresql-jdbc4</driver>
+                    <security>
+                        <user-name>trip</user-name>
+                        <password>zaq123</password>
+                    </security>
+                    <validation>
+                        <validate-on-match>false</validate-on-match>
+                        <background-validation>false</background-validation>
+                    </validation>
+                    <statement>
+                        <share-prepared-statements>false</share-prepared-statements>
+                    </statement>
+              </datasource>
