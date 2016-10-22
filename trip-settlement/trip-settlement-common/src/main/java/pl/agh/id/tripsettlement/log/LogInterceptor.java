@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 @Loggable
 public class LogInterceptor {
 
-    private static final Logger logger = Logger.getLogger("tripsettlementLogger");
+    private static final Logger logger = Logger.getLogger("TripSettlementLogger");
 
     /**
      * Operacja wywolywana podczas wywolania operacja oznaczonej adnotacja @Loggable. Loguje ona z wykorzystaniem klasy Logger

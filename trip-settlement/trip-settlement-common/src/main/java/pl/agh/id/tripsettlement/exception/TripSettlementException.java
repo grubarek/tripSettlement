@@ -80,5 +80,8 @@ public class TripSettlementException extends Exception {
         VALIDATION_ERROR,
         NO_RESULT,
         ERROR,
+        DISABLE,
+        NO_PERMISSION,
+        UNAUTHORIZED,
     }
 }

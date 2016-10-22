@@ -1,4 +1,4 @@
-package pl.agh.id.tripsettlement.facade;
+package pl.agh.id.tripsettlement;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

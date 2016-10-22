@@ -8,6 +8,11 @@ public final class ResponseMessage {
     public class Authentication {
     }
 
+    /**
+     * W pierwszej wersji nie ma logowania na konto, ale dla w przyszłości poprzez strone WWW możliwe będzie
+     * zapisywanie i aktualizacja danych poprzez logowanie: user-pass
+
+     */
     public final class Account {
         private Account() {
         }
