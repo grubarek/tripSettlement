@@ -51,7 +51,7 @@ Response:
 "groupKey":"12345678",
 "groupName" : "nazwa grupy",
 "creationDate":"",
-"updateDate":"". //Ostatnia aktualizacja rekordu w grupie
+"updateDate":"", //Ostatnia aktualizacja rekordu w grupie
 "users": [
 {
 	"id":1, 
@@ -72,13 +72,13 @@ Request:
 "name" :"nazwa zdarzenia ",
 "recordedDate":{
 	"timestamp": "timestamp" /Data utworzenia offline. Z dokładnością do milisekund ()
-}
+},
 "contentImage" : "base64",
 "contentType" : "image/jpg",
 "coordinates": {
 	"lat" : float,
 	"lon" : float
-} 
+} ,
 "users":[ //Walidacja czy odpowiednia ilość użytkowników w grupie
 	{"id":1,
 	"value": 2.0,
@@ -95,8 +95,8 @@ Request:
 ```
 Response:
 ```json{
-"id": 1
-"name":"Kawa",
+"id": 1,
+"name" : "Kawa",
 "coordinates": {
 	"lat" : float,
 	"lon" : float
@@ -131,7 +131,7 @@ PUT /group/groupKey/record - edycja rekordu dla grupy
 ```json
  {
 "id": 1,
-"name" :"nazwa zdarzenia ",
+"name" : "nazwa zdarzenia ",
 "recordedDate":{
 	"timestamp": "timestamp" /Data utworzenia offline. Z dokładnością do milisekund ()
 }
@@ -168,7 +168,7 @@ GET /group/groupKey/record?sort=desc  - listowanie wszystkich wpisów + sortowan
 "groupName":"nazwa",
 "records":[
 {
-"id": 1
+"id": 1,
 "name":"Kawa",
 "coordinates": {
 	"lat" : float,
