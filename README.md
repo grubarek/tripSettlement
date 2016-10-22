@@ -20,7 +20,8 @@ Endpointy
 
 POST /group  - dodanie grupy
 Request:
-{
+
+```json
 “groupName” : “nazwa grupy”,
 “users”: [
 	{
@@ -32,16 +33,21 @@ Request:
 
   ]
 }
+```
+{
+
 
 Response:
+
+```json
 {
 	“groupKey” : “”,
 	“url” : “http://example.com/group_key_chars” //Dla zapraszania użytkowników
 }
-
-GET /group/<groupKey> - listowanie danych o grupie razem z listą użytkowników.
+```
+GET /group/groupKey - listowanie danych o grupie razem z listą użytkowników.
 Response:
-{
+```json{
 “groupKey”:”12345678”,
 “groupName” : “nazwa grupy”,
 “creationDate”:””,
@@ -56,12 +62,12 @@ Response:
 “login” :””,
 }
 ]}
-
-POST /group/<groupKey>/record - dodanie rekordu dla grupy
+```
+POST /group/groupKey/record - dodanie rekordu dla grupy
 dane obrazka zapisujemy w bazie: jako tablica base64? W response można wystawić base64. Do zapisu potrzebny będzie jeszcze contentType.
 
 Request:
-
+```json
  {
 “name” :”nazwa zdarzenia ”,
 “recordedDate”:{
@@ -86,9 +92,9 @@ Request:
 },
 ]
 }
-
+```
 Response:
-{
+```json{
 “id”: 1
 "name":"Kawa",
 “coordinates”: {
@@ -114,15 +120,15 @@ Response:
 	"participation": 1}
 ]
 }
-
-DELETE /group/<groupKey>/record/<id>
-{
+```
+DELETE /group/groupKey/record/id
+```json{
 	“id”: 1
 }
+```
+PUT /group/groupKey/record - edycja rekordu dla grupy
 
-PUT /group/<groupKey>/record - edycja rekordu dla grupy
-
-
+```json
  {
 “id”: 1,
 “name” :”nazwa zdarzenia ”,
@@ -149,14 +155,15 @@ PUT /group/<groupKey>/record - edycja rekordu dla grupy
 ]
 }
 
+```
 Response:
 Zmodyfikowany rekord. 
 
 
 
 
-GET /group/<groupKey>/record?sort=desc  - listowanie wszystkich wpisów + sortowanie po dacie
-
+GET /group/groupKey/record?sort=desc  - listowanie wszystkich wpisów + sortowanie po dacie
+```json
 {
 "groupName":"nazwa",
 "records":[
@@ -214,8 +221,9 @@ GET /group/<groupKey>/record?sort=desc  - listowanie wszystkich wpisów + sortow
 }
 ]}
 
-GET /group/<groupKey>/summary - zagregowane dane wyściowe z podsumowaniem ile kto ma zapłacić.
-
+```
+GET /group/groupKey/summary - zagregowane dane wyściowe z podsumowaniem ile kto ma zapłacić.
+```json
 {
 “groupId”: 1,
 “summaryCost”: 50,
@@ -238,7 +246,7 @@ GET /group/<groupKey>/summary - zagregowane dane wyściowe z podsumowaniem ile k
 “curenncy” :”zł”, -- nie wiem czy to potrzebne możemy przyjąć rozliczanie tylko w zł.
 }]
 }
-
+```
 
 
 Dodatkowy parametr `?time`  powoduje dodanie do responsu pola time określa czas wykonywania skryptu. 
