@@ -22,13 +22,13 @@ POST /group  - dodanie grupy
 Request:
 
 ```json
-“groupName” : “nazwa grupy”,
-“users”: [
+"groupName" : "nazwa grupy",
+"users": [
 	{
-	“login”: “”,
+	"login": "",
 },
 {
-“login” :””,
+"login" :"",
 }
 
   ]
@@ -41,25 +41,25 @@ Response:
 
 ```json
 {
-	“groupKey” : “”,
-	“url” : “http://example.com/group_key_chars” //Dla zapraszania użytkowników
+	"groupKey" : "",
+	"url" : "http://example.com/group_key_chars" //Dla zapraszania użytkowników
 }
 ```
 GET /group/groupKey - listowanie danych o grupie razem z listą użytkowników.
 Response:
 ```json{
-“groupKey”:”12345678”,
-“groupName” : “nazwa grupy”,
-“creationDate”:””,
-“updateDate”:””. //Ostatnia aktualizacja rekordu w grupie
-“users”: [
+"groupKey":"12345678",
+"groupName" : "nazwa grupy",
+"creationDate":"",
+"updateDate":"". //Ostatnia aktualizacja rekordu w grupie
+"users": [
 {
-	“id”:1, 
-	“login”: “”,
+	"id":1, 
+	"login": "",
 },
 {
-“id”:2, 
-“login” :””,
+"id":2, 
+"login" :"",
 }
 ]}
 ```
@@ -69,37 +69,37 @@ dane obrazka zapisujemy w bazie: jako tablica base64? W response można wystawi�
 Request:
 ```json
  {
-“name” :”nazwa zdarzenia ”,
-“recordedDate”:{
-	“timestamp”: “timestamp” /Data utworzenia offline. Z dokładnością do milisekund ()
+"name" :"nazwa zdarzenia ",
+"recordedDate":{
+	"timestamp": "timestamp" /Data utworzenia offline. Z dokładnością do milisekund ()
 }
-“contentImage” : “base64”,
-“contentType” : “image/jpg”,
-“coordinates”: {
-	“lat” : float,
-	“lon” : float
+"contentImage" : "base64",
+"contentType" : "image/jpg",
+"coordinates": {
+	"lat" : float,
+	"lon" : float
 } 
-“users”:[ //Walidacja czy odpowiednia ilość użytkowników w grupie
-	{“id”:1,
-	“value”: 2.0,
-	“currency”: “PLN” //słownikowane kody walutowe ISO-4217,
-	“participation”: 1,
+"users":[ //Walidacja czy odpowiednia ilość użytkowników w grupie
+	{"id":1,
+	"value": 2.0,
+	"currency": "PLN" //słownikowane kody walutowe ISO-4217,
+	"participation": 1,
 },
-	{“id”:2,
-	“value”: 0.0,
-	“currency”: “PLN” //słownikowane kody walutowe ISO-4217,
-	“participation”: 1,
+	{"id":2,
+	"value": 0.0,
+	"currency": "PLN" //słownikowane kody walutowe ISO-4217,
+	"participation": 1,
 },
 ]
 }
 ```
 Response:
 ```json{
-“id”: 1
+"id": 1
 "name":"Kawa",
-“coordinates”: {
-	“lat” : float,
-	“lon” : float
+"coordinates": {
+	"lat" : float,
+	"lon" : float
 }, 
 "recordedDate":{
 	"timestamp": "timestamp"
@@ -123,34 +123,34 @@ Response:
 ```
 DELETE /group/groupKey/record/id
 ```json{
-	“id”: 1
+	"id": 1
 }
 ```
 PUT /group/groupKey/record - edycja rekordu dla grupy
 
 ```json
  {
-“id”: 1,
-“name” :”nazwa zdarzenia ”,
-“recordedDate”:{
-	“timestamp”: “timestamp” /Data utworzenia offline. Z dokładnością do milisekund ()
+"id": 1,
+"name" :"nazwa zdarzenia ",
+"recordedDate":{
+	"timestamp": "timestamp" /Data utworzenia offline. Z dokładnością do milisekund ()
 }
-“contentImage” : “base64”,
-“contentType” : “image/jpg”,
-“coordinates”: {
-	“lat” : float,
-	“lon” : float
+"contentImage" : "base64",
+"contentType" : "image/jpg",
+"coordinates": {
+	"lat" : float,
+	"lon" : float
 } 
-“users”:[ //Walidacja czy odpowiednia ilość użytkowników w grupie
-	{“id”:1,
-	“value”: 2.0,
-	“currency”: “PLN” //słownikowane kody walutowe ISO-4217,
-	“participation”: 1,
+"users":[ //Walidacja czy odpowiednia ilość użytkowników w grupie
+	{"id":1,
+	"value": 2.0,
+	"currency": "PLN" //słownikowane kody walutowe ISO-4217,
+	"participation": 1,
 },
-	{“id”:2,
-	“value”: 0.0,
-	“currency”: “PLN” //słownikowane kody walutowe ISO-4217,
-	“participation”: 1,
+	{"id":2,
+	"value": 0.0,
+	"currency": "PLN" //słownikowane kody walutowe ISO-4217,
+	"participation": 1,
 },
 ]
 }
@@ -168,11 +168,11 @@ GET /group/groupKey/record?sort=desc  - listowanie wszystkich wpisów + sortowan
 "groupName":"nazwa",
 "records":[
 {
-“id”: 1
+"id": 1
 "name":"Kawa",
-“coordinates”: {
-	“lat” : float,
-	“lon” : float
+"coordinates": {
+	"lat" : float,
+	"lon" : float
 }, 
 "recordedDate":{
 	"timestamp": "timestamp"
@@ -194,11 +194,11 @@ GET /group/groupKey/record?sort=desc  - listowanie wszystkich wpisów + sortowan
 ]
 },
 {
-“id”: 2,
+"id": 2,
 "name":"Pizza",
-“coordinates”: {
-	“lat” : float,
-	“lon” : float
+"coordinates": {
+	"lat" : float,
+	"lon" : float
 }, 
 "recordedDate":{
 	"timestamp": "timestamp"
@@ -225,25 +225,25 @@ GET /group/groupKey/record?sort=desc  - listowanie wszystkich wpisów + sortowan
 GET /group/groupKey/summary - zagregowane dane wyściowe z podsumowaniem ile kto ma zapłacić.
 ```json
 {
-“groupId”: 1,
-“summaryCost”: 50,
-“users”:
+"groupId": 1,
+"summaryCost": 50,
+"users":
 [{
-“id”:1,
-“toPay”: 25,
-“overpayment“ :0, lub null
-“curenncy” :”PLN”, -- nie wiem czy to potrzebne możemy przyjąć  rozliczanie tylko w zł.
+"id":1,
+"toPay": 25,
+"overpayment" :0, lub null
+"curenncy" :"PLN", -- nie wiem czy to potrzebne możemy przyjąć  rozliczanie tylko w zł.
 },
 {
-“id”:2,
-“toPay”: 0,
-“overpayment“ :50,
-“curenncy” :”zł”, -- nie wiem czy to potrzebne możemy przyjąć rozliczanie tylko w zł.
+"id":2,
+"toPay": 0,
+"overpayment" :50,
+"curenncy" :"zł", -- nie wiem czy to potrzebne możemy przyjąć rozliczanie tylko w zł.
 },
 {
-“id”:3,
-“toPay”: 25,
-“curenncy” :”zł”, -- nie wiem czy to potrzebne możemy przyjąć rozliczanie tylko w zł.
+"id":3,
+"toPay": 25,
+"curenncy" :"zł", -- nie wiem czy to potrzebne możemy przyjąć rozliczanie tylko w zł.
 }]
 }
 ```
